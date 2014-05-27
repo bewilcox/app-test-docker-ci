@@ -2,4 +2,4 @@
 # PARAMETERS
 
 # Launch application
-java -jar /gs-spring-boot.war
+java -jar gs-spring-boot.war

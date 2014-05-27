@@ -10,13 +10,16 @@ RUN \
   echo debconf shared/accepted-oracle-license-v1-1 seen true | debconf-set-selections && \
   add-apt-repository -y ppa:webupd8team/java && \
   apt-get update && \
-  apt-get install -y oracle-java7-install
+  apt-get install -y oracle-java7-installer
 
 # Environment variable
 ENV JAVA_HOME /usr/lib/jvm/java-7-oracle
 
 ADD startup_server.sh /startup_server.sh
 RUN chmod 700 /startup_server.sh
+
+# Application
+ADD gs-spring-boot.war /gs-spring-boot.war
 
 # Port
 EXPOSE 8080
