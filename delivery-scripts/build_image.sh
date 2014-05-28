@@ -14,4 +14,4 @@ fi
 mv --force ../gs-spring-boot-$1.war ../delivery-scripts/gs-spring-boot.war
 
 # Build Docker image
-sudo docker build --tag 192.168.29.100:5000/prjexample/webapp:$1 --rm=true .
+docker build --tag 192.168.29.100:5000/prjexample/webapp:$1 --rm=true .
