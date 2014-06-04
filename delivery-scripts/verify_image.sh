@@ -37,13 +37,14 @@ if [ "$JOB_EXIT_CODE" == "0" ] && [ "$JOB_STATUS" == "true" ]; then
         fi
 else
         echo "ERROR -  Container not running correctly (Status = $JOB_STATUS, exit_code=$JOB_EXIT_CODE)"
-        RESULT=0
+        RESULT=1
 fi
 
 # Remove container
 sudo docker stop $JOB_ID
 sudo docker rm -f $JOB_ID
 
-if [ "$RESULT" -eq 0 ]; then
+if [ "$RESULT" -eq 1 ]; then
+  echo "ERROR - An error occured during the verification phase"
   exit 1
 fi
