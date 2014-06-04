@@ -5,7 +5,7 @@
 # image creation verification
 
 # Start container
-JOB_ID = $(sudo docker run -d 192.168.29.100:5000/prjexample-webapp:$1)
+JOB_ID = $(sudo docker run -d 192.168.29.100:5000/prjexample/webapp:$1)
 JOB_IP = $(docker inspect --format='{{.NetworkSettings.IPAddress}}' $JOB_ID)
 JOB_STATUS = $(docker inspect --format='{{.State.Running}}' $JOB_ID)
 JOB_EXIT_CODE = $(docker inspect --format='{{.State.ExitCode}}' $JOB_ID)
