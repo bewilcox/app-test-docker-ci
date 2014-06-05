@@ -8,4 +8,4 @@ if [ $# -ne 1 ]; then
     exit 65
 fi
 
-sudo docker pull 192.168.29.100:5000/prjexample/webapp:$1
+sudo docker push 192.168.29.100:5000/prjexample/webapp:$1
