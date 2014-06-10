@@ -75,11 +75,11 @@ fi
 # Start the container
 if [ "$RESULT" -eq 0 ]; then
         echo "Trying to start the container ..."
-        json="\'{\"PortBindings\":{\"8080/tcp\": [{\"HostPort\":\"8080\"}]}}\'"
-	contentype="\"Content-Type: application/json\""
-	echo curl -X POST -o /dev/null -w "%{http_code}" -H "$contentype" -d "$json" $ENDPOINT/containers/prjexample-webapp/start
-	#res=$(curl -X POST -o /dev/null -w "%{http_code}" -H "$contentype" -d "$json" $ENDPOINT/containers/prjexample-webapp/start)
-	curl -X POST -o /dev/null -w "%{http_code}" -H "Content-Type:application/json" -d '{\"PortBindings\":{\"8080/tcp\": [{\"HostPort\":\"8080\"}]}}' $ENDPOINT/containers/prjexample-webapp/start
+        json="{\"PortBindings\":{\"8080/tcp\": [{\"HostPort\":\"8080\"}]}}"
+	contentype="Content-Type: application/json"
+	cmd=$(echo curl --silent -X POST -o /dev/null -w "%{http_code}" -H \""$contentype"\" -d "'$json'" $ENDPOINT/containers/prjexample-webapp/start)
+	echo COMMANDE = $cmd
+	res=$(eval $cmd)
 	if [ "$res" == "204" ]; then
                 echo "Container started"
         else
