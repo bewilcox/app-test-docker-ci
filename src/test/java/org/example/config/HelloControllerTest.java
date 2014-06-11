@@ -1,5 +1,6 @@
-package hello;
+package org.example.config;
 
+import org.example.Application;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.springframework.beans.factory.annotation.Value;
