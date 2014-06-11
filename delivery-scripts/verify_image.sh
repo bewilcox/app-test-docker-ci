@@ -29,7 +29,7 @@ if [ "$JOB_EXIT_CODE" == "0" ] && [ "$JOB_STATUS" == "true" ]; then
         echo "connected successfully"
 
         HEALTH=$(curl --silent --get http://$JOB_IP:8080/health)
-        if [ "$HEALTH" != "ok" ]; then
+        if [ "$HEALTH" != "{\"status\":\"UP\"}" ]; then
                 echo "ERROR -  health return not equal to OK ( = $HEALTH)"
                 RESULT=1
         else
