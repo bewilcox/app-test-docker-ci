@@ -41,6 +41,7 @@ else
 fi
 
 # Remove container
+echo "Attempt to stop and remove test containers ..."
 sudo docker stop $JOB_ID
 sudo docker rm -f $JOB_ID
 
