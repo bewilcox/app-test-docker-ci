@@ -30,6 +30,6 @@ public class HelloControllerTest {
                 "http://localhost:" + this.port, String.class);
 
         assertEquals(HttpStatus.OK, entity.getStatusCode());
-        assertEquals("Greetings from Spring Boot!", entity.getBody());
+        assertEquals("Greetings from Spring Boot (version 1.1.0)!", entity.getBody());
     }
 }
