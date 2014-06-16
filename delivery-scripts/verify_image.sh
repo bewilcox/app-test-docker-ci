@@ -22,7 +22,7 @@ JOB_EXIT_CODE=$(sudo docker inspect --format='{{.State.ExitCode}}' $JOB_ID)
 
 if [ "$JOB_EXIT_CODE" == "0" ] && [ "$JOB_STATUS" == "true" ]; then
         try=1
-        while [! curl --silent http://$JOB_IP:8080/] && [$TRY -lt 20]
+        while [! curl --silent http://$JOB_IP:8080/] && [ $TRY -lt 20 ]
         do
           echo "Trying to connect to host  : http://$JOB_IP:8080/ ..."
           sleep 1
