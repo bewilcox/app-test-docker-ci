@@ -25,13 +25,17 @@ public class MigrationTest {
     private PersonRepository personRepository;
 
     @Test
-    public void testMigration() throws Exception {
+    public void testMigrationJDBC() throws Exception {
         assertEquals("Select count * should return 1",
                 new Integer(1),
-                this.template.queryForObject("SELECT COUNT(*) from PERSON", Integer.class));
+                this.template.queryForObject("SELECT COUNT(*) from person", Integer.class));
+    }
 
+    @Test
+    public void testMigrationJpaRepository() throws Exception {
         assertEquals("Person repository should have one element",
                 1,
                 this.personRepository.count());
     }
+
 }

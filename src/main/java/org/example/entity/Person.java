@@ -3,6 +3,7 @@ package org.example.entity;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
+import javax.persistence.Table;
 
 /**
  * Created by bewilcox on 11/06/2014.
@@ -14,6 +15,10 @@ public class Person {
     private Long id;
     private String firstName;
     private String lastName;
+
+    public Long getId() {
+        return id;
+    }
 
     public String getFirstName() {
         return this.firstName;

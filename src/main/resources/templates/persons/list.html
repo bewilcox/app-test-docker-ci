@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org"
+      xmlns:layout="http://www.ultraq.net.nz/web/thymeleaf/layout"
+      layout:decorator="layout">
+<head>
+    <title>Welcome App Example</title>
+</head>
+<body>
+<h1 layout:fragment="header">Application Example</h1>
+<div layout:fragment="content" class="container">
+    <table class="table table-bordered table-striped">
+        <thead>
+        <tr>
+            <td>ID</td>
+            <td>FIRSTNAME</td>
+            <td>LASTNAME</td>
+        </tr>
+        </thead>
+        <tbody>
+        <tr th:if="${persons.empty}">
+            <td colspan="3">
+                No messages
+            </td>
+        </tr>
+        <tr th:each="person : ${persons}">
+            <td th:text="${person.id}"></td>
+            <td th:text="${person.firstName}"></td>
+            <td th:text="${person.lastName}"></td>
+        </tr>
+        </tbody>
+    </table>
+</div>
+</body>
+</html>
