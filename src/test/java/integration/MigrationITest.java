@@ -1,4 +1,4 @@
-package org.example.config;
+package integration;
 
 import org.example.Application;
 import org.example.repository.PersonRepository;
@@ -16,7 +16,7 @@ import static org.junit.Assert.assertEquals;
  */
 @RunWith(SpringJUnit4ClassRunner.class)
 @SpringApplicationConfiguration(classes = Application.class)
-public class MigrationTest {
+public class MigrationITest {
 
     @Autowired
     private JdbcTemplate template;
