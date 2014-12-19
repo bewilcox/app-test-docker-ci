@@ -4,7 +4,7 @@
 
     <groupId>org.springframework</groupId>
     <artifactId>gs-spring-boot</artifactId>
-    <version>1.0.0</version>
+    <version>1.0.1</version>
     <packaging>war</packaging>
 
     <parent>
@@ -37,9 +37,9 @@
 
     <build>
         <plugins>
-            <plugin> 
-                <artifactId>maven-compiler-plugin</artifactId> 
-                <version>2.3.2</version> 
+            <plugin>
+                <artifactId>maven-compiler-plugin</artifactId>
+                <version>2.3.2</version>
             </plugin>
             <plugin>
                 <groupId>org.springframework.boot</groupId>
